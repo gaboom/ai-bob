@@ -15,44 +15,46 @@ body {
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
-    width: 100%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 1600px;
     text-align: center;
 }
 
 header {
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.title-block {
+    text-align: left;
 }
 
 h1 {
     color: #2d3748;
-    font-size: 2rem;
+    font-size: 1.5rem; /* Reduced size */
+    margin: 0;
 }
 
-.api-key-section {
-    background-color: #f7fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    font-style: italic;
-    color: #4a5568;
-}
-
-.main-controls {
-    margin-bottom: 2rem;
+header p {
+    margin: 0;
+    color: #718096;
 }
 
 #connectButton {
     background-color: #4299e1;
     color: #fff;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    font-size: 1rem; /* Reduced size */
     font-weight: 600;
-    border-radius: 50px;
+    border-radius: 8px; /* Less rounded */
     cursor: pointer;
     transition: background-color 0.2s, transform 0.1s ease;
+    flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 #connectButton.connected {
@@ -60,13 +62,13 @@ h1 {
 }
 
 #connectButton:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .text-input-section {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Reduced margin */
 }
 
 #textInput {
@@ -98,8 +100,15 @@ h1 {
     opacity: 0.6;
 }
 
-.log-panel {
+.log-container {
+    display: flex;
+    gap: 1.5rem;
     text-align: left;
+}
+
+.log-panel {
+    flex: 1;
+    min-width: 0;
 }
 
 .log-panel h2 {
@@ -112,11 +121,11 @@ h1 {
 #eventLog {
     list-style: none;
     padding: 0;
-    margin: 0 0 2rem 0;
+    margin: 0;
     background-color: #f7fafc;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    height: 300px;
+    height: 400px;
     overflow-y: scroll;
     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
     font-size: 0.9rem;
@@ -127,6 +136,9 @@ h1 {
     border-bottom: 1px solid #e2e8f0;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #eventLog li:hover {
@@ -143,7 +155,7 @@ h1 {
     color: #f7fafc;
     border-radius: 8px;
     padding: 1.5rem;
-    height: 200px;
+    height: 400px;
     overflow-y: scroll;
     white-space: pre-wrap;
     word-wrap: break-word;

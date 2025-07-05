@@ -79,6 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             dataChannel.onmessage = (event) => {
                 const message = JSON.parse(event.data);
+                // Filter out delta events to keep the log clean
+                if (message.type && message.type.endsWith('.delta')) {
+                    return;
+                }
                 log(`Received: ${message.type}`, message);
             };
             dataChannel.onclose = () => {
