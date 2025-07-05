@@ -1,0 +1,29 @@
+{
+  "name": "ai-bob",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaboom/ai-bob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gaboom/ai-bob/issues"
+  },
+  "homepage": "https://github.com/gaboom/ai-bob#readme",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "node-fetch": "^2.7.0",
+    "openai": "^5.8.2",
+    "socket.io": "^4.8.1"
+  }
+}
